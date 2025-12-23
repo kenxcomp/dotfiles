@@ -7,6 +7,8 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "buffer_font_family": "Monaspace Argon",
+  "icon_theme": "Zed (Default)",
   "autosave": {
     "after_delay": {
       "milliseconds": 1000
@@ -15,9 +17,5 @@
   "base_keymap": "VSCode",
   "ui_font_size": 16,
   "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "Ayu Light",
-    "dark": "Zedokai"
-  }
+  "theme": "Gruvbox Dark Soft"
 }

@@ -128,3 +128,6 @@ eval "$(zoxide init zsh)"
 
 #starship
 eval "$(starship init zsh)"
+
+#vim模式
+bindkey -v
