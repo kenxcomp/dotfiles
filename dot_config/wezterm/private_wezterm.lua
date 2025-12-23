@@ -135,6 +135,9 @@ config.keys = {
 
 	-- 重新加载配置
 	{ key = "r", mods = "CMD|SHIFT", action = wezterm.action.ReloadConfiguration },
+
+	-- Shift+Enter 发送 ESC+CR (从 ~/.wezterm.lua 合并)
+	{ key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b\r" }) },
 }
 
 -- =============================================================================
