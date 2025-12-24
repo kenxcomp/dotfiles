@@ -1,0 +1,9 @@
+{
+  "model": "opus",
+  "enabledPlugins": {
+    "example-skills@anthropic-agent-skills": true,
+    "document-skills@anthropic-agent-skills": true,
+    "swift-lsp@claude-plugins-official": true,
+    "Notion@claude-plugins-official": true
+  }
+}
