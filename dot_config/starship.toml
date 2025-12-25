@@ -17,23 +17,26 @@ $line_break\
 $character\
 """
 
-palette = 'dracula'
+palette = 'gruvbox_soft'
 add_newline = true
 
-[palettes.dracula]
-foreground = '#F8F8F2'
-background = '#282A36'
-current_line = '#44475A'
-primary = '#1E1F29'
-box = '#44475A'
-blue = '#6272A4'
-cyan = '#8BE9FD'
-green = '#50FA7B'
-orange = '#FFB86C'
-pink = '#FF79C6'
-purple = '#BD93F9'
-red = '#FF5555'
-yellow = '#F1FA8C'
+[palettes.gruvbox_soft]
+# Gruvbox Dark Soft Base
+# Background typically: #32302f
+foreground = '#ebdbb2'   # Cream
+current_line = '#928374' # Gray (Connector lines)
+primary = '#282828'      # Dark (Text on top of bright accents)
+box = '#504945'          # Gruvbox BG2 (Background for text pills)
+
+# Accents
+red = '#fb4934'
+green = '#b8bb26'
+yellow = '#fabd2f'
+blue = '#83a598'
+purple = '#d3869b'
+aqua = '#8ec07c'
+orange = '#fe8019'
+pink = '#d3869b'         # Mapped to purple for Gruvbox consistency
 
 [os]
 format = '(fg:current_line)[](fg:red)[$symbol ](fg:primary bg:red)[](fg:red)'
@@ -74,7 +77,8 @@ Unknown = ''
 Windows = ''
 
 [directory]
-format = '[─](fg:current_line)[](fg:pink)[󰷏 ](fg:primary bg:pink)[](fg:pink bg:box)[ $read_only$truncation_symbol$path](fg:foreground bg:box)[](fg:box)'
+# Using Aqua for directory to stand out
+format = '[─](fg:current_line)[](fg:aqua)[󰷏 ](fg:primary bg:aqua)[](fg:aqua bg:box)[ $read_only$truncation_symbol$path](fg:foreground bg:box)[](fg:box)'
 home_symbol = " ~/"
 truncation_symbol = ' '
 truncation_length = 2
@@ -89,15 +93,15 @@ symbol = ' '
 format = '[( $all_status)](fg:foreground bg:box)[](fg:box)'
 
 [nodejs]
-format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+format = '[─](fg:current_line)[](fg:yellow)[$symbol](fg:primary bg:yellow)[](fg:yellow bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
 detect_files = ["package.json", ".node-version", "!bunfig.toml", "!bun.lockb"]
 
 [bun]
-format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+format = '[─](fg:current_line)[](fg:orange)[$symbol](fg:primary bg:orange)[](fg:orange bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
 symbol = '🥟'
 
 [deno]
-format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+format = '[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
 symbol = '🦕'
 
 [aws]
@@ -110,7 +114,7 @@ style = 'fg:current_line'
 
 [cmd_duration]
 min_time = 500
-format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
+format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)'
 
 [shell]
 format = '[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)'
@@ -122,7 +126,7 @@ time_format = '%H:%M'
 disabled = false
 
 [username]
-format = '[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
+format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $user](fg:foreground bg:box)[](fg:box) '
 show_always = true
 
 [character]
