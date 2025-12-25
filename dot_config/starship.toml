@@ -3,12 +3,12 @@ format = """
 $os\
 $directory\
 $git_branch\
+$git_status\
 $fill\
 $nodejs\
-$dotnet\
-$python\
-$java\
-$c\
+$bun\
+$deno\
+$aws\
 $cmd_duration\
 $shell\
 $time\
@@ -26,13 +26,13 @@ background = '#282A36'
 current_line = '#44475A'
 primary = '#1E1F29'
 box = '#44475A'
-blue	= '#6272A4'
+blue = '#6272A4'
 cyan = '#8BE9FD'
-green	= '#50FA7B'
+green = '#50FA7B'
 orange = '#FFB86C'
 pink = '#FF79C6'
 purple = '#BD93F9'
-red	= '#FF5555'
+red = '#FF5555'
 yellow = '#F1FA8C'
 
 [os]
@@ -82,28 +82,27 @@ read_only = '󱧵 '
 read_only_style = ''
 
 [git_branch]
-format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)[](fg:box)'
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)'
 symbol = ' '
+
+[git_status]
+format = '[( $all_status)](fg:foreground bg:box)[](fg:box)'
 
 [nodejs]
 format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
-symbol = '󰎙 Node.js'
+detect_files = ["package.json", ".node-version", "!bunfig.toml", "!bun.lockb"]
 
-[dotnet]
-format = '[─](fg:current_line)[](fg:purple)[$symbol](fg:primary bg:purple)[](fg:purple bg:box)[ $tfm](fg:foreground bg:box)[](fg:box)'
-symbol = ' .NET'
-
-[python]
+[bun]
 format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
-symbol = ' python'
+symbol = '🥟'
 
-[java]
-format = '[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
-symbol = ' Java'
+[deno]
+format = '[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
+symbol = '🦕'
 
-[c]
-format = '[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)'
-symbol = ' C'
+[aws]
+format = '[─](fg:current_line)[](fg:purple)[$symbol](fg:primary bg:purple)[](fg:purple bg:box)[ $profile](fg:foreground bg:box)[](fg:box)'
+symbol = '☁️'
 
 [fill]
 symbol = '─'
@@ -115,9 +114,6 @@ format = '[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[
 
 [shell]
 format = '[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)'
-unknown_indicator = 'shell'
-powershell_indicator = 'powershell'
-fish_indicator = 'fish'
 disabled = false
 
 [time]
@@ -131,6 +127,7 @@ show_always = true
 
 [character]
 format = """
+[│](fg:current_line)
 [╰─$symbol](fg:current_line) """
-success_symbol = '[λ](fg:bold white)'
-error_symbol = '[×](fg:bold red)'
+success_symbol = '[](fg:bold green)'
+error_symbol = '[](fg:bold red)'
