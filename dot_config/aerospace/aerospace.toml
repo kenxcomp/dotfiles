@@ -216,3 +216,37 @@ on-mode-changed = []
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
+
+[[on-window-detected]]
+    if.app-id = 'com.tencent.xinWeChat'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace 2'
+[[on-window-detected]]
+    if.app-id = 'com.electron.lark'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace 2'
+[[on-window-detected]]
+    if.app-id = 'is.follow'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace 2'
+[[on-window-detected]]
+    if.app-id = 'com.todesktop.230313mz14w4u92'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace C'
+[[on-window-detected]]
+    if.app-id = 'dev.zed.Zed'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace Z'
+[[on-window-detected]]
+    if.app-id = 'company.thebrowser.dia'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace B'
+[[on-window-detected]]
+    if.app-id = 'com.openai.atlas'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace B'
+[[on-window-detected]]
+    if.app-id = 'md.obsidian'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace O'
+[[on-window-detected]]
+    if.app-id = 'notion.id'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace N'
+[[on-window-detected]]
+    if.app-id = 'net.shinyfrog.bear'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace N'
+[[on-window-detected]]
+    if.app-id = 'com.spotify.client'   # ← 替换成 A 的真实 bundle id
+    run = 'move-node-to-workspace M'
