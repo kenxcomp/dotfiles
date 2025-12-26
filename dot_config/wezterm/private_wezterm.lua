@@ -8,15 +8,16 @@ local config = wezterm.config_builder()
 
 -- 配色方案: Gruvbox Dark Soft
 config.color_scheme = "Gruvbox dark, soft (base16)"
+-- "Monokai Pro (Gogh)"
 
 -- 字体设置
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Regular" })
+config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Bold" })
 config.font_size = 14.0
 config.line_height = 1.1
 
 -- 窗口设置
-config.window_background_opacity = 0.99
-config.macos_window_background_blur = 20
+config.window_background_opacity = 0.88
+config.macos_window_background_blur = 50
 config.window_decorations = "RESIZE"
 config.window_padding = {
 	left = 10,
@@ -33,7 +34,7 @@ config.initial_rows = 35
 -- 标签栏设置
 -- =============================================================================
 
-config.enable_tab_bar = true
+config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
