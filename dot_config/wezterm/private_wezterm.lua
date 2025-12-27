@@ -34,7 +34,7 @@ config.initial_rows = 35
 -- 标签栏设置
 -- =============================================================================
 
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = false
 config.use_fancy_tab_bar = false
