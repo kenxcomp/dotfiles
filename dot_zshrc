@@ -133,3 +133,4 @@ eval "$(starship init zsh)"
 
 #vim模式
 bindkey -v
+KEYTIMEOUT=1  # Esc 延迟优化 (单位: 1/100秒)
