@@ -24,3 +24,7 @@ function y
     end
     rm -f -- "$tmp"
 end
+
+function cheat
+    curl cheat.sh/$argv[1]
+end
