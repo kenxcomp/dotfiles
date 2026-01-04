@@ -170,7 +170,8 @@ table.insert(config.hyperlink_rules, {
 -- =============================================================================
 
 -- 默认 shell (macOS 使用 zsh)
-config.default_prog = { "/bin/zsh", "-l" }
+config.default_prog = { "/opt/homebrew/bin/fish", "-l" }
+-- /bin/zsh
 
 -- 环境变量
 config.set_environment_variables = {
