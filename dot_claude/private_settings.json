@@ -5,5 +5,18 @@
     "document-skills@anthropic-agent-skills": true,
     "swift-lsp@claude-plugins-official": true,
     "Notion@claude-plugins-official": true
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code 需要你的注意\" with title \"Claude Code\" sound name \"Ping\"'"
+          }
+        ]
+      }
+    ]
   }
 }

@@ -36,3 +36,6 @@ abbr -a y. 'y ~/.config'
 
 abbr -a cra 'chezmoi re-add'
 abbr -a cdi 'chezmoi diff'
+
+# claude
+abbr -a cpm 'claude --permission-mode'
