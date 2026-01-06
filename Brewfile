@@ -1,5 +1,6 @@
 tap "felixkratz/formulae"
 tap "nikitabobko/tap"
+brew "mole"
 brew "btop"
 brew "chezmoi"
 brew "fd"
