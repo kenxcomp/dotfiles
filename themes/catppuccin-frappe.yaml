@@ -1,0 +1,64 @@
+# Catppuccin Frappe Palette
+name: "catppuccin-frappe"
+type: "dark"
+
+colors:
+  # Base colors
+  bg: "#303446"
+  bg_dim: "#292c3c"
+  bg_alt: "#414559"
+  fg: "#c6d0f5"
+  fg_dim: "#a5adce"
+
+  # Selection
+  selection_bg: "#51576d"
+  selection_fg: "#c6d0f5"
+
+  # Cursor
+  cursor: "#f2d5cf"
+  cursor_text: "#303446"
+
+  # ANSI colors
+  black: "#51576d"
+  bright_black: "#626880"
+  red: "#e78284"
+  bright_red: "#e78284"
+  green: "#a6d189"
+  bright_green: "#a6d189"
+  yellow: "#e5c890"
+  bright_yellow: "#e5c890"
+  blue: "#8caaee"
+  bright_blue: "#8caaee"
+  magenta: "#f4b8e4"
+  bright_magenta: "#f4b8e4"
+  cyan: "#81c8be"
+  bright_cyan: "#81c8be"
+  white: "#b5bfe2"
+  bright_white: "#a5adce"
+
+  # Semantic colors
+  rosewater: "#f2d5cf"
+  flamingo: "#eebebe"
+  pink: "#f4b8e4"
+  mauve: "#ca9ee6"
+  maroon: "#ea999c"
+  peach: "#ef9f76"
+  teal: "#81c8be"
+  sky: "#99d1db"
+  sapphire: "#85c1dc"
+  lavender: "#babbf1"
+  gray: "#737994"
+  orange: "#ef9f76"
+  aqua: "#81c8be"
+  purple: "#ca9ee6"
+
+# Tool-specific identifiers
+tools:
+  zellij: "catppuccin-frappe"
+  nvim_plugin: "catppuccin/nvim"
+  nvim_colorscheme: "catppuccin-frappe"
+  nvim_opts:
+    flavour: "frappe"
+    transparent_background: false
+  starship_palette: "catppuccin_frappe"
+  btop_theme: "catppuccin_frappe"

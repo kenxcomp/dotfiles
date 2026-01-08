@@ -1,0 +1,5 @@
+# Theme Configuration
+# Managed by theme-switch script
+theme:
+  name: "catppuccin-mocha"
+  type: "dark"

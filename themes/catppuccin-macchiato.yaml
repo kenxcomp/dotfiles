@@ -1,0 +1,64 @@
+# Catppuccin Macchiato Palette
+name: "catppuccin-macchiato"
+type: "dark"
+
+colors:
+  # Base colors
+  bg: "#24273a"
+  bg_dim: "#1e2030"
+  bg_alt: "#363a4f"
+  fg: "#cad3f5"
+  fg_dim: "#a5adcb"
+
+  # Selection
+  selection_bg: "#494d64"
+  selection_fg: "#cad3f5"
+
+  # Cursor
+  cursor: "#f4dbd6"
+  cursor_text: "#24273a"
+
+  # ANSI colors
+  black: "#494d64"
+  bright_black: "#5b6078"
+  red: "#ed8796"
+  bright_red: "#ed8796"
+  green: "#a6da95"
+  bright_green: "#a6da95"
+  yellow: "#eed49f"
+  bright_yellow: "#eed49f"
+  blue: "#8aadf4"
+  bright_blue: "#8aadf4"
+  magenta: "#f5bde6"
+  bright_magenta: "#f5bde6"
+  cyan: "#8bd5ca"
+  bright_cyan: "#8bd5ca"
+  white: "#b8c0e0"
+  bright_white: "#a5adcb"
+
+  # Semantic colors
+  rosewater: "#f4dbd6"
+  flamingo: "#f0c6c6"
+  pink: "#f5bde6"
+  mauve: "#c6a0f6"
+  maroon: "#ee99a0"
+  peach: "#f5a97f"
+  teal: "#8bd5ca"
+  sky: "#91d7e3"
+  sapphire: "#7dc4e4"
+  lavender: "#b7bdf8"
+  gray: "#6e738d"
+  orange: "#f5a97f"
+  aqua: "#8bd5ca"
+  purple: "#c6a0f6"
+
+# Tool-specific identifiers
+tools:
+  zellij: "catppuccin-macchiato"
+  nvim_plugin: "catppuccin/nvim"
+  nvim_colorscheme: "catppuccin-macchiato"
+  nvim_opts:
+    flavour: "macchiato"
+    transparent_background: false
+  starship_palette: "catppuccin_macchiato"
+  btop_theme: "catppuccin_macchiato"

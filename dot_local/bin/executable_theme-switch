@@ -1,0 +1,155 @@
+#!/usr/bin/env fish
+# Theme switching script for chezmoi-managed terminal toolchain
+# Usage: theme-switch [theme-name]
+# Available themes: gruvbox-material-dark, catppuccin-mocha, catppuccin-macchiato,
+#                   catppuccin-frappe, catppuccin-latte
+
+set -g available_themes \
+    "gruvbox-material-dark" \
+    "catppuccin-mocha" \
+    "catppuccin-macchiato" \
+    "catppuccin-frappe" \
+    "catppuccin-latte"
+
+set -g chezmoi_data "$HOME/.local/share/chezmoi/.chezmoidata.yaml"
+
+function show_usage
+    echo "Theme Switcher for Terminal Toolchain"
+    echo ""
+    echo "Usage: theme-switch [theme-name]"
+    echo ""
+    echo "Available themes:"
+    for theme in $available_themes
+        if test "$theme" = (get_current_theme)
+            echo "  * $theme (current)"
+        else
+            echo "    $theme"
+        end
+    end
+    echo ""
+    echo "Options:"
+    echo "  -l, --list    List available themes"
+    echo "  -c, --current Show current theme"
+    echo "  -h, --help    Show this help"
+end
+
+function get_current_theme
+    if test -f $chezmoi_data
+        grep 'name:' $chezmoi_data | head -1 | sed 's/.*name: *"\([^"]*\)".*/\1/' | tr -d ' \n'
+    else
+        echo "gruvbox-material-dark"
+    end
+end
+
+function validate_theme
+    set -l theme $argv[1]
+    for t in $available_themes
+        if test "$t" = "$theme"
+            return 0
+        end
+    end
+    return 1
+end
+
+function switch_theme
+    set -l new_theme $argv[1]
+    set -l theme_type "dark"
+
+    # Determine theme type
+    if string match -q "*latte*" $new_theme
+        set theme_type "light"
+    end
+
+    echo "Switching to theme: $new_theme"
+
+    # Update chezmoidata.yaml
+    if test -f $chezmoi_data
+        # Create backup
+        cp $chezmoi_data "$chezmoi_data.bak"
+    end
+
+    # Write new theme configuration
+    echo "# Theme Configuration
+# Managed by theme-switch script
+theme:
+  name: \"$new_theme\"
+  type: \"$theme_type\"" > $chezmoi_data
+
+    echo "Updated chezmoi data..."
+
+    # Apply chezmoi changes
+    echo "Applying chezmoi templates..."
+    chezmoi apply
+
+    # Reload tools
+    echo "Reloading tools..."
+    reload_tools
+
+    echo ""
+    echo "Theme switched to: $new_theme"
+    echo "Some tools may require manual restart for full effect."
+end
+
+function reload_tools
+    # Fish - source the new theme file
+    if test -f ~/.config/fish/conf.d/theme.fish
+        source ~/.config/fish/conf.d/theme.fish
+        echo "  [OK] Fish theme reloaded"
+    end
+
+    # Kitty - send reload signal
+    if pgrep -x kitty > /dev/null
+        kitty @ set-colors --all ~/.config/kitty/current-theme.conf 2>/dev/null
+        and echo "  [OK] Kitty colors reloaded"
+        or echo "  [!] Kitty: restart required (remote control not enabled or socket not found)"
+    end
+
+    # Zellij - requires restart
+    if set -q ZELLIJ
+        echo "  [!] Zellij: restart session for theme change"
+    end
+
+    # Yazi - uses terminal colors, no action needed
+    echo "  [OK] Yazi uses terminal colors (automatic)"
+
+    # Btop - requires restart
+    if pgrep -x btop > /dev/null
+        echo "  [!] Btop: restart for theme change"
+    else
+        echo "  [OK] Btop theme configured"
+    end
+
+    # Neovim - can be reloaded via autocmd or requires restart
+    echo "  [!] Neovim: run :colorscheme or restart"
+end
+
+# Parse arguments
+if test (count $argv) -eq 0
+    show_usage
+    exit 0
+end
+
+switch $argv[1]
+    case -l --list
+        echo "Available themes:"
+        for theme in $available_themes
+            if test "$theme" = (get_current_theme)
+                echo "  * $theme (current)"
+            else
+                echo "    $theme"
+            end
+        end
+    case -c --current
+        echo (get_current_theme)
+    case -h --help
+        show_usage
+    case '*'
+        if validate_theme $argv[1]
+            switch_theme $argv[1]
+        else
+            echo "Error: Unknown theme '$argv[1]'"
+            echo ""
+            show_usage
+            exit 1
+        end
+end

@@ -1,0 +1,64 @@
+# Catppuccin Mocha Palette
+name: "catppuccin-mocha"
+type: "dark"
+
+colors:
+  # Base colors
+  bg: "#1e1e2e"
+  bg_dim: "#181825"
+  bg_alt: "#313244"
+  fg: "#cdd6f4"
+  fg_dim: "#a6adc8"
+
+  # Selection
+  selection_bg: "#45475a"
+  selection_fg: "#cdd6f4"
+
+  # Cursor
+  cursor: "#f5e0dc"
+  cursor_text: "#1e1e2e"
+
+  # ANSI colors
+  black: "#45475a"
+  bright_black: "#585b70"
+  red: "#f38ba8"
+  bright_red: "#f38ba8"
+  green: "#a6e3a1"
+  bright_green: "#a6e3a1"
+  yellow: "#f9e2af"
+  bright_yellow: "#f9e2af"
+  blue: "#89b4fa"
+  bright_blue: "#89b4fa"
+  magenta: "#f5c2e7"
+  bright_magenta: "#f5c2e7"
+  cyan: "#94e2d5"
+  bright_cyan: "#94e2d5"
+  white: "#bac2de"
+  bright_white: "#a6adc8"
+
+  # Semantic colors (Catppuccin-specific)
+  rosewater: "#f5e0dc"
+  flamingo: "#f2cdcd"
+  pink: "#f5c2e7"
+  mauve: "#cba6f7"
+  maroon: "#eba0ac"
+  peach: "#fab387"
+  teal: "#94e2d5"
+  sky: "#89dceb"
+  sapphire: "#74c7ec"
+  lavender: "#b4befe"
+  gray: "#6c7086"
+  orange: "#fab387"
+  aqua: "#94e2d5"
+  purple: "#cba6f7"
+
+# Tool-specific identifiers
+tools:
+  zellij: "catppuccin-mocha"
+  nvim_plugin: "catppuccin/nvim"
+  nvim_colorscheme: "catppuccin-mocha"
+  nvim_opts:
+    flavour: "mocha"
+    transparent_background: false
+  starship_palette: "catppuccin_mocha"
+  btop_theme: "catppuccin_mocha"
