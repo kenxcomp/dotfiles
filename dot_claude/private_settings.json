@@ -1,4 +1,9 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(ls *)"
+    ]
+  },
   "hooks": {
     "Notification": [
       {
@@ -19,6 +24,7 @@
     "Notion@claude-plugins-official": true,
     "greptile@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "ralph-loop@claude-plugins-official": true
+    "ralph-loop@claude-plugins-official": true,
+    "claude-mem@thedotmack": true
   }
 }
